@@ -10,6 +10,7 @@ import pe.edu.cibertec.integrantesappback.service.AutenticacionService;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 @Service
 public class AutenticacionServiceImpl implements AutenticacionService {
@@ -23,7 +24,7 @@ public class AutenticacionServiceImpl implements AutenticacionService {
         String[] datosIntegrante = null;
         Resource resource = resourceLoader.getResource("classpath:datosIntegrantes.txt");
 
-        try(BufferedReader br = new BufferedReader(new FileReader(resource.getFile()))) {
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
 
             String linea;
 

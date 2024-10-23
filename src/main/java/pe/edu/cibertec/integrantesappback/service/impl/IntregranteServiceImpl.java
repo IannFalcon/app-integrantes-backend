@@ -10,6 +10,7 @@ import pe.edu.cibertec.integrantesappback.service.IntegranteService;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class IntregranteServiceImpl implements IntegranteService {
         List<Integrante> listaIntegrantes = new ArrayList<>();
         Resource resource = resourceLoader.getResource("classpath:datosIntegrantes.txt");
 
-        try (BufferedReader br = new BufferedReader((new FileReader(resource.getFile())))) {
+        try (BufferedReader br = new BufferedReader((new InputStreamReader(resource.getInputStream())))) {
 
             String linea;
 
